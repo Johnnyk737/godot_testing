@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ContinueButton.gd" type="Script" id=1]
+[ext_resource path="res://NewGame.gd" type="Script" id=2]
+[ext_resource path="res://SettingsButton.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 8
+
+[node name="VerticalContainer" type="VBoxContainer" parent="."]
+margin_left = 257.0
+margin_top = 141.0
+margin_right = 752.0
+margin_bottom = 438.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="VerticalContainer"]
+margin_top = 43.0
+margin_right = 495.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 0, 50 )
+text = "Continue"
+script = ExtResource( 1 )
+
+[node name="NewGameButton" type="Button" parent="VerticalContainer"]
+margin_top = 123.0
+margin_right = 495.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 0, 50 )
+text = "New Game"
+script = ExtResource( 2 )
+
+[node name="SettingsButton" type="Button" parent="VerticalContainer"]
+margin_top = 203.0
+margin_right = 495.0
+margin_bottom = 253.0
+rect_min_size = Vector2( 0, 50 )
+text = "Settings"
+script = ExtResource( 3 )
+[connection signal="pressed" from="VerticalContainer/ContinueButton" to="VerticalContainer/ContinueButton" method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="VerticalContainer/NewGameButton" to="VerticalContainer/NewGameButton" method="_on_Button_pressed"]
+[connection signal="pressed" from="VerticalContainer/SettingsButton" to="VerticalContainer/SettingsButton" method="_on_SettingsButton_pressed"]
